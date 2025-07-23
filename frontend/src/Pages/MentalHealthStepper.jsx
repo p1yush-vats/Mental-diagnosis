@@ -21,7 +21,7 @@ export default function MentalHealthStepper() {
   const currentKeys = allKeysOrdered.slice(stepIndex * BATCH_SIZE, (stepIndex + 1) * BATCH_SIZE);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/label-options')
+    axios.get('https://mental-diagnosis.onrender.com//label-options')
       .then(res => {
         setLabelOptions(res.data);
         const initialData = {};
@@ -55,7 +55,7 @@ export default function MentalHealthStepper() {
     const inputFeatures = { ...formData };
     delete inputFeatures['Depression State'];
 
-    axios.post('http://localhost:5000/predict', inputFeatures)
+    axios.post('https://mental-diagnosis.onrender.com/predict', inputFeatures)
       .then(res => {
         setResult(res.data.diagnosis);
         setConfidence(res.data.confidence);

@@ -5,7 +5,7 @@ const useLabelOptions = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/label-options')
+    fetch('https://mental-diagnosis.onrender.com//label-options')
       .then(res => res.json())
       .then(data => {
         setLabelOptions(data);

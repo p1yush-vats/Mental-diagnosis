@@ -58,14 +58,14 @@ const Visualizations = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/visual-data')
+    axios.get('https://mental-diagnosis.onrender.com//visual-data')
       .then((response) => setVisualData(response.data))
       .catch((error) => {
         console.error("Error fetching visual data:", error);
         setError('Failed to fetch visual data');
       });
 
-    axios.get('http://localhost:5000/model-metrics')
+    axios.get('https://mental-diagnosis.onrender.com//model-metrics')
       .then((response) => {
         const report = response.data;
         setMetrics({
