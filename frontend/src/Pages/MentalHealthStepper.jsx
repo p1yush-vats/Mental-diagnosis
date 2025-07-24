@@ -21,7 +21,7 @@ export default function MentalHealthStepper() {
   const currentKeys = allKeysOrdered.slice(stepIndex * BATCH_SIZE, (stepIndex + 1) * BATCH_SIZE);
 
   useEffect(() => {
-    axios.get('https://mental-diagnosis.onrender.com//label-options')
+    axios.get('https://mental-diagnosis.onrender.com/label-options')
       .then(res => {
         setLabelOptions(res.data);
         const initialData = {};
